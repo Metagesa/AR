@@ -15,13 +15,19 @@
   </head>
   <script>
     window.onload = function () {
+      var click = false;
       document
         .querySelector(".say-hi-button")
         .addEventListener("click", function () {
           // here you can change also a-scene or a-entity properties, like
           // changing your 3D model source, size, position and so on
           // or you can just open links, trigger actions...
+        if(click) {
           document.querySelector('a-text').setAttribute('scale', `3 3 3`);
+        } else {
+          document.querySelector('a-text').setAttribute('scale', `5 5 5`);
+        }
+        click = !click;
           //alert("Hi there!");
         });
     };
